@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-image: url('background-image.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        #photos {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #photos div {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        #photos img {
+            width: 45%; /* Adjust the width as needed */
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-time {
+            color: black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body class="PS-page">
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="PS.html">Photos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Photos Section -->
+    <section id="photos">
+        <h2>Graphic Design Showcases</h2>
+        <div>
+            <img src="https://i.imgur.com/bNvtKWA.jpg" alt="Image 1">
+            <img src="https://i.imgur.com/KDFJ9an.jpg" alt="Image 2">
+        </div>
+
+        <div>
+            <img src="https://i.imgur.com/M9UMSsa.jpg" alt="Image 3">
+            <img src="https://i.imgur.com/bz7VpwH.jpg" alt="Image 4">
+        </div>
+
+        <div>
+            <img src="https://i.imgur.com/1Ag5sMX.jpg" alt="Image 5">
+            <img src="https://i.imgur.com/0Da7Lok.jpg" alt="Image 6">
+        </div>
+
+        <div>
+            <img src="https://i.imgur.com/Vrr7a2C.jpg" alt="Image 7">
+            <img src="https://i.imgur.com/ZQWmlKZ.jpg" alt="Image 8">
+        </div>
+
+        <div>
+            <img src="https://i.imgur.com/1PWX8Sb.jpg" alt="Image 9">
+            <img src="https://i.imgur.com/T9t8Fg4.jpg" alt="Image 10">
+        </div>
+    </section>
+
+    <div id="date-time"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setInterval(() => {
+                const dateTimeElement = document.getElementById('date-time');
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                dateTimeElement.textContent = formattedDateTime;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

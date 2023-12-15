@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Section</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skills-category {
+            flex: 1;
+            margin: 0 10px; /* Add margin for spacing */
+        }
+    </style>
+</head>
+
+<body class="talents-page">
+
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <a href="PS.html">Photos</a>
+            </ul>
+        </nav>
+
+        <section id="skills">
+            <div class="image-container">
+                <a href="https://imgur.com/NKUqcof"><img src="https://i.imgur.com/NKUqcof.gif" title="source: imgur.com" /></a>
+            </div>
+
+            <div class="content-container">
+                <div class="skills-category" id="technical-skills">
+                    <h2>Technical Skills</h2>
+                    <ul>
+                        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                        <li>Microsoft Teams | Microsoft Visio | Microsoft Outlook</li>
+                        <li>Coding | Arduino | Spyder | Visual Basic +</li>
+                        <li>Servers | Active Directory | Wireless Networking</li>
+                        <li>Routing Switching | VOIP | Network Security</li>
+                        <li>MAN, LAN, and WAN | TCP/IP</li>
+                        <li>Computer, Cryptographic, Network, and Switch Systems</li>
+                        <li>Firewalls | Network Drives | Ethernet</li>
+                        <li>Linux | Windows | macOS | iOS | Android</li>
+                        <li>Analysis & Problem Solving | Positive Customer Experience</li>
+                        <li>Written Communication | Troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category" id="languages">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>Spanish - Native</li>
+                        <li>English - High</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category" id="interests">
+                    <h2>Interests</h2>
+                    <ul>
+                        <li>Video Games</li>
+                        <li>Music</li>
+                        <li>Travel</li>
+                        <li>Competitive Gaming</li>
+                        <li>Cooking</li>
+                        <li>Reading</li>
+                        <li>TV Shows</li>
+                        <li>Movies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <a href="https://imgur.com/NKUqcof"><img src="https://i.imgur.com/NKUqcof.gif" title="source: imgur.com" /></a>
+            </div>
+        </section>
+
+        <div id="date-time"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setInterval(() => {
+                const dateTimeElement = document.getElementById('date-time');
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                dateTimeElement.textContent = formattedDateTime;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

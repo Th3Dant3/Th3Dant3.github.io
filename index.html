@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="index-page">
+
+    <div id="index-content" class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <a href="PS.html">Photos</a>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h1>Welcome</h1>
+            <p>I'm glad you could make it. You can learn a lot about my hobbies and professional background here. Since Windows 95, I've been interested in 
+			computers, and I constantly try to keep up to date and upgrade with every new window. I was raised in Puerto Rico, where I was born.  have been 
+			working only in the optical industry and have lived in Ohio for about 13 years. I have been employed in the optical industry for nearly 13 years, 
+			and during that time I have gained specialized knowledge about the operation of optical vision from each manufacturer, including VSPOne, Hoya Vison, 
+			|ExilorLuxxotica, and now Zenni Optical. I work at Zenni as a Production Optical Technician III, performing a variety of responsibilities. I have a 
+			strong sense of competition and have shown it in both my work and video games. I participated in League of Legends @ Puerto Rico, one of the biggest 
+			E-Sports games in the world, with the goal of competing against all Latin Americans. However, we finished in third place, so we were unable to advance. 
+			My love for video games has never faded, and I've never let my fierce competitiveness deter me from going after my goals in life. My other interests include 
+			baking and cooking meals. As far as music tastes go, I love all kinds of music.</p>
+        </section>
+
+        <div id="date-time"></div>
+
+        
+        <a href="https://imgur.com/3wnoQvw"><img src="https://i.imgur.com/3wnoQvw.gif" title="source: imgur.com" /></a>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            setInterval(() => {
+                const dateTimeElement = document.getElementById('date-time');
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                dateTimeElement.textContent = formattedDateTime;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

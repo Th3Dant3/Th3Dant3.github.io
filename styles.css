@@ -1,0 +1,163 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6;
+    color: #fff; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+body.index-page {
+    background-image: url('https://i.imgur.com/wRd8i3f.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.about-page,
+body.talents-page,
+body.projects-page,
+body.contact-page,
+body.PS-page {
+    background-image: url('https://i.imgur.com/2nBgjkI.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#home {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; 
+    justify-content: center; 
+}
+
+nav a {
+    color: #fff; 
+    text-decoration: none;
+    margin: 0 20px; 
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 30px; 
+    background-color: #000; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #333; 
+}
+
+
+.project {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    color: #3498db;
+}
+
+.project a {
+    color: black; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+.project a:hover {
+    color: #fff; 
+}
+
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+#date-time {
+    color: white;
+    margin-top: 20px;
+}
+/* Add these styles to your existing CSS */
+
+#skills {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.skills-category {
+    flex: 1;
+    margin: 0 10px;
+}
+
+#technical-skills {
+    order: 1; /* Order on the left */
+}
+
+#languages {
+    order: 2; /* Order in the middle */
+}
+
+#interests {
+    order: 3; /* Order on the right */	
+}
+/* Add these styles to your existing CSS file */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px; /* Adjust as needed */
+}
+
+.image-container img {
+    max-width: 75%; /* Adjust the width as needed */
+    height: auto;
+}
+
+

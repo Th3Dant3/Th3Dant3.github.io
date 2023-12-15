@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .date-time {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="contact-page">
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="PS.html">Photos</a></li>
+        </ul>
+    </nav>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch with me, feel free to fill out the form below or use the provided contact information.</p>
+
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p>Email: <a href="mailto:brianlopezcabrera@gmail.com">brianlopezcabrera@gmail.com</a></p>
+            <p>Phone: (740) 656-3142</p>
+            <p>Address: Blacklick, Ohio 43004</p>
+        </div>
+
+        <div class="resume-link">
+            <p>Check out my resume: <a href="https://docs.google.com/document/d/1p3owMIi79FZ-ppWRE53dnqv8VT9fJM-z/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true" target="_blank">Resume</a></p>
+        </div>
+
+        <div class="social-link">
+            <p>Visit my LinkedIn: <a href="https://www.linkedin.com/in/brianlopezcabrera/" target="_blank">Your Website</a></p>
+            <!-- or -->
+            <!-- <p>Connect with me on social media: <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank">LinkedIn</a></p> -->
+        </div>
+    </section>
+
+    <div id="date-time"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setInterval(() => {
+                const dateTimeElement = document.getElementById('date-time');
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                dateTimeElement.textContent = formattedDateTime;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
