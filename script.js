@@ -11,4 +11,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 1000);
 });
 
-// Add other JavaScript functionalities as needed
+
