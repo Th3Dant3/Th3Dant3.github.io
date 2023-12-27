@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="index-page">
+
+    <div id="index-content" class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h1><a href="https://imgur.com/EXpAdNe"><img src="https://i.imgur.com/EXpAdNe.gif" title="source: imgur.com" /></a></h1>
+            
+            <!-- Add this element for displaying date and time -->
+            <div id="date-time"></div>
+        </section>
+        
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setInterval(() => {
+                const dateTimeElement = document.getElementById('date-time');
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                dateTimeElement.textContent = formattedDateTime;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
