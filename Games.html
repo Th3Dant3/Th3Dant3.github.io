@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Game Page</title>
-
-    <!-- Include Phaser.js -->
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.63.0/dist/phaser.min.js"></script>
+    <title>Adventure Game</title>
 
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
         }
 
         nav {
@@ -24,18 +23,21 @@
             color: white;
             text-decoration: none;
             margin: 0 15px;
+            font-size: 18px;
         }
 
         #game-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            height: 80vh;
         }
 
-        iframe {
-            border: none; /* Remove iframe border */
+        #game-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -56,8 +58,12 @@
 
 <!-- Container for the game -->
 <div id="game-container">
-    <iframe src="https://github.com/Th3Dant3/Th3Dant3.github.io/AdventureGame.jar" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+    <div id="game-content">
+        <iframe src="https://github.com/Th3Dant3/Th3Dant3.github.io/AdventureGame.jar" width="800" height="600" frameborder="0" allowfullscreen></iframe>
 
+            <!-- Optionally, you can provide additional parameters here -->
+        
+    </div>
 </div>
 
 </body>
