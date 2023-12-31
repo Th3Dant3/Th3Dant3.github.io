@@ -14,14 +14,6 @@
             padding: 0;
         }
 
-        #game-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
         nav {
             background-color: #333;
             padding: 10px;
@@ -32,6 +24,18 @@
             color: white;
             text-decoration: none;
             margin: 0 15px;
+        }
+
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        iframe {
+            border: none; /* Remove iframe border */
         }
     </style>
 </head>
@@ -44,39 +48,16 @@
         <li><a href="education.html">Education</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-		<li><a href="Games.html">Games</a></li>
+        <li><a href="Games.html">Games</a></li>
         <li><a href="PS.html">Photos</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
 <!-- Container for the game -->
-<div id="game-container"></div>
-
-<script>
-    // Your game script goes here
-    const config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        scene: {
-            preload: preload,
-            create: create
-        }
-    };
-
-    const game = new Phaser.Game(config);
-
-    function preload() {
-        // Preload assets if needed
-    }
-
-    function create() {
-        // Create your game logic here
-        const text = this.add.text(400, 300, 'Hello, Phaser!', { fontSize: '32px', fill: '#000' });
-        text.setOrigin(0.5);
-    }
-</script>
+<div id="game-container">
+    <iframe src="Games.html" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+</div>
 
 </body>
 </html>
