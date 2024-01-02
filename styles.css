@@ -1,10 +1,8 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -32,6 +30,7 @@ body.about-page,
 body.talents-page,
 body.projects-page,
 body.contact-page,
+body.GamePlay-page,
 body.PS-page {
     background-image: url('https://i.imgur.com/2nBgjkI.jpg');
     background-size: cover;
@@ -75,7 +74,6 @@ nav a:hover {
     background-color: #333; 
 }
 
-
 .project {
     background-color: #ecf0f1;
     padding: 20px;
@@ -103,7 +101,6 @@ footer {
     text-align: center;
 }
 
-
 @media screen and (max-width: 768px) {
     nav {
         text-align: center;
@@ -124,7 +121,6 @@ footer {
     color: white;
     margin-top: 20px;
 }
-/* Add these styles to your existing CSS */
 
 #skills {
     display: flex;
@@ -148,7 +144,7 @@ footer {
 #interests {
     order: 3; /* Order on the right */	
 }
-/* Add these styles to your existing CSS file */
+
 .image-container {
     display: flex;
     justify-content: space-between;
@@ -160,4 +156,11 @@ footer {
     height: auto;
 }
 
-
+/* Added rule for GamePlay-page */
+body.GamePlay-page {
+    background-image: url('https://i.imgur.com/2nBgjkI.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
