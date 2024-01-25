@@ -3,35 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education & Work </title>
+    <title>Education & Work</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Set all link colors to lilac */
+        nav a {
+            color: black !important;
+            background-color: #c8a2c8 !important; /* Lilac color */
+            padding: 12px 20px; /* Make the buttons a little bigger */
+        }
+
+        /* Added styles for highlighted links and cursor animation */
+        nav a.highlight-green {
+            background-color: lightgreen;
+            cursor: url('https://i.imgur.com/s4WQaH5.png'), auto;
+        }
+
+        nav a.highlight-blue {
+            background-color: #c8a2c8; /* Lilac color */
+            cursor: url('http://www.rw-designer.com/cursor-extern.php?id=173197'), auto;
+        }
+
+        /* Updated styles for normal link and random color change on hover */
+        nav a {
+            transition: color 0.3s ease, background-color 0.3s ease;
+            font-size: 18px; /* Increase text size for the buttons */
+        }
+
+        nav a:hover {
+            /* Random color on hover */
+            color: # + Math.floor(Math.random()*16777215).toString(16) !important;
+        }
+
+        #about ul {
+            border: 1px solid #ccc;
+            /* Additional styling for the education and work lists */
+            padding: 20px;
+            margin: 20px 0;
+            display: none; /* Initially hide the lists */
+            font-size: 20px; /* Increase text size for Education and Work information */
+        }
+
+        #date-time {
+            display: inline-block;
+            margin-top: 20px;
+            /* Additional styles for the date and time */
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* Added animation for cursor change */
+        nav a {
+            transition: cursor 0.3s ease;
+        }
+
+        /* Added styles for the back button */
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #c8a2c8; /* Lilac color */
+            cursor: pointer;
+        }
+		
+        /* Added styles for the copyright notice */
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px; /* Increase text size for the copyright notice */
+            color: #fff; /* White color */
+        }
+    </style>
 </head>
 <body class="about-page">
 
     <div class="container">
+        <!-- Back button added here -->
+        <div class="back-button" onclick="window.location.href='index.html'">← Back</div>
+        
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="PS.html">Photos</a></li>
-				 <li><a href="GamePlay.html">Game Test</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                
+                <li><a href="#" class="highlight-blue" id="education-link">Education</a></li>
+                <li><a href="#" class="highlight-blue" id="work-link">Work</a></li>                
             </ul>
         </nav>
 
         <section id="about">
-            <h2>Education</h2>
-            <ul>
+            <h2 id="education">Education</h2>
+            <ul id="education-list">
                 <li><strong>Devry University</strong> - Bachelor of Science; Information Technology & Networking - Database Management - 12/2024</li>
                 <li><strong>Instituto Tecnologico</strong> - Associate of Science; Operating Systems - 06/2010</li>
             </ul>
-			
-			
-            <h2>Work Experience</h2>
-            <ul>
+            
+            <h2 id="work">Work Experience</h2>
+            <ul id="work-list">
                 <li><strong>Zenni Optical</strong> - Production Technician III - 11/2021 - Current </li>
                 <li><strong>Luxottica Optical</strong> - Sr. Production Technician - 10/2017 - 11/2021</li>
                 <li><strong>Hoya Vision</strong> - Production Technician - 06/2016 - 10/2017</li>
@@ -39,8 +107,41 @@
             </ul>
         </section>
         <div class="date-time"></div>
+		
+        <!-- Copyright notice -->
+        <p>&copy; Brian Lopez Cabrera</p>
+		
     </div>
 
     <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Apply professional styling to education and work lists
+            $('#about ul').css('border', '1px solid #ccc');
+            
+            // Update date and time with a gaming-style effect
+            setInterval(() => {
+                const dateTimeElement = $('.date-time');
+                const now = new Date();
+                const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                dateTimeElement.fadeOut(500, function () {
+                    dateTimeElement.text(formattedDateTime).fadeIn(500);
+                });
+            }, 1000);
+
+            // Add click event for education link
+            $('#education-link').click(function () {
+                $('#education-list').slideToggle();
+                $('#work-list').slideUp();
+            });
+
+            // Add click event for work link
+            $('#work-link').click(function () {
+                $('#work-list').slideToggle();
+                $('#education-list').slideUp();
+            });
+        });
+    </script>
 </body>
 </html>

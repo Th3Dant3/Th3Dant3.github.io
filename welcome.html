@@ -5,36 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Added styles for highlighted links and cursor animation */
+        nav a.highlight-green {
+            background-color: lightgreen;
+             cursor: url(http://www.rw-designer.com/cursor-extern.php?id=173197), auto;
+        }
+
+        nav a.highlight-blue {
+            background-color: lightblue;
+            cursor: url(http://www.rw-designer.com/cursor-extern.php?id=173198), auto;
+        }
+
+        #date-time {
+            display: inline-block;
+            margin-top: 20px;
+            /* Additional styles for the date and time */
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* Added animation for cursor change */
+        nav a {
+            transition: cursor 0.3s ease;
+        }
+    </style>
 </head>
 <body class="index-page">
 
     <div id="index-content" class="container">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-		<li><a href="GamePlay.html">Game Test</a></li>
+                <li><a href="index.html" class="highlight-green">Home</a></li>
+                <li><a href="GamePlay.html" class="highlight-blue">Game Test</a></li>
                 <!-- Add other navigation links as needed -->
             </ul>
         </nav>
 
         <section id="home">
-            <h1><a href="https://imgur.com/EXpAdNe"><img src="https://i.imgur.com/EXpAdNe.gif" title="source: imgur.com" /></a></h1>
+            <h1><a href="https://imgur.com/EXpAdNe"><img src="https://i.imgur.com/EXpAdNe.gif" title="source: imgur.com" style="display:none;" id="welcome-image" /></a></h1>
             
             <!-- Add this element for displaying date and time -->
             <div id="date-time"></div>
+
+            <!-- Copyright notice -->
+            <p style="text-align: center; margin-top: 20px;">&copy; Brian Lopez Cabrera</p>
         </section>
         
     </div>
 
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        $(document).ready(function () {
+            // Animate the welcome image on page load with a slower fadeIn
+            $('#welcome-image').fadeIn(3000);
+            
+            // Update date and time with a gaming-style effect and color change
             setInterval(() => {
-                const dateTimeElement = document.getElementById('date-time');
+                const dateTimeElement = $('#date-time');
                 const now = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
                 const formattedDateTime = now.toLocaleDateString('en-US', options);
-                dateTimeElement.textContent = formattedDateTime;
+
+                // Random color for the text
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+                // Set text and color without fading
+                dateTimeElement.text(formattedDateTime).css('color', randomColor);
             }, 1000);
         });
     </script>

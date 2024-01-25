@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
         body {
             font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,6 +76,16 @@
             border-radius: 5px;
             cursor: pointer;
         }
+		
+		/* Added styles for the back button */
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #c8a2c8; /* Lilac color */
+            cursor: pointer;
 
         button:hover {
             background-color: #555;
@@ -108,21 +119,43 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        /* Added styles for animations */
+        .pulse {
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
     </style>
 </head>
 <body class="contact-page">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="PS.html">Photos</a></li>
-				 <li><a href="GamePlay.html">Game Test</a></li>
-                <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+   <div class="container">
+        <!-- Back button added here -->
+        <div class="back-button" onclick="window.location.href='index.html'">← Back</div>
 
     <section id="contact">
         <h2>Contact Me</h2>
@@ -138,7 +171,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" id="submitBtn">Send Message</button>
         </form>
 
         <div class="contact-info">
@@ -155,19 +188,33 @@
             <p>Visit my LinkedIn: <a href="https://www.linkedin.com/in/brianlopezcabrera/" target="_blank">LinkedIn</a></p>
         </div>
     </section>
+	
+	<div id="copyright">
+        <p style="font-size: 20px; color: #fff;">Copyright Brian Lopez Cabrera</p>
+    </div>
 
     <div id="date-time"></div>
 
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            setInterval(() => {
-                const dateTimeElement = document.getElementById('date-time');
-                const now = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-                const formattedDateTime = now.toLocaleDateString('en-US', options);
-                dateTimeElement.textContent = formattedDateTime;
-            }, 1000);
+        $(document).ready(function () {
+            // jQuery code for animations
+            $("#submitBtn").hover(
+                function () {
+                    $(this).addClass("pulse");
+                },
+                function () {
+                    $(this).removeClass("pulse");
+                }
+            );
+
+            $("form").submit(function (e) {
+                e.preventDefault();
+                $(this).addClass("shake");
+                setTimeout(() => {
+                    $(this).removeClass("shake");
+                }, 1000);
+            });
         });
     </script>
 </body>
