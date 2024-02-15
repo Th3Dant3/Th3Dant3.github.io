@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Section</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-image: url('https://i.imgur.com/2nBgjkI.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-size: 18px;
+            color: #fff;
+            background-color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 15px 30px;
+            background-color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        #projects {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #projects div {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            width: calc(33.33% - 40px);
+        }
+
+        #projects h2 {
+            color: #fff;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #projects h3 {
+            color: #3498db;
+            cursor: pointer;
+            font-size: 24px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        #projects p {
+            color: #fff;
+            margin: 10px 0;
+            display: none; /* Hide project descriptions initially */
+        }
+
+        #projects a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: none; /* Hide project links initially */
+        }
+
+        #projects a:hover {
+            background-color: #333;
+        }
+
+        .date-time {
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Copyright Section */
+        #copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #fff; /* White color */
+        }
+    </style>
+</head>
+<body class="projects-page">
+    <nav>
+        <button onclick="window.history.back()">Back</button>
+       
+    </nav>
+
+    <section id="projects">
+        
+        <div>
+            <h3 class="toggle-project">Smart Home & Security System</h3>
+            <p>An automated security system is designed and developed week by week. From creating a Tinkercard prototype to carrying out each step and coding at home using all required tools, 
+			to recording the finished product. Circuit simulation is the first step, followed by message display and building, door sensor addition, distance sensor addition, date collection, 
+			and automated light addition to the home system.</p>
+            <a href="https://docs.google.com/presentation/d/1Nq8Ded0zB3bwzYzxBsL5fxe2-jkkkQX-/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+
+        <div>
+            <h3 class="toggle-project">Operating Systems</h3>
+            <p> I grow into skilled with command-line efficiency week by week, working my way up from simple file operations to remote system management. I can now manage users with ease, write 
+			and run scripts, and move through directories with ease. I have the ability to keep an eye on networking activity, so I have a comprehensive command-line proficiency.</p>
+            <a href="https://docs.google.com/presentation/d/16zOR5iqeZR07RQ8-So3CXZJCuy_YiWM_/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+
+        <div>
+            <h3 class="toggle-project">Programming with Python</h3>
+            <p>TThe temperature and humidity based on three weeks of data collection are gathered using a cloud-based system by the data gathering project. Python programming and data analytics 
+			were used for data analysis.</p>
+            <a href="https://docs.google.com/presentation/d/1vgfhyE4U0tbu8Fw9qln8YddHemYsYGze/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+
+        <div>
+            <h3 class="toggle-project">Traffic Light using Arduino</h3>
+            <p>Week by week, the traffic lights' development and operation can be observed. A double traffic light, a pedestrian stop and walk signal, and more intricate style coding are all included 
+			in the transition from basic light change coding. Having in this class all the resources I require to archive my next objective.</p>
+            <a href="https://docs.google.com/presentation/d/1VOiX72tN3B9nV5_ofdIsoYRyFMCoz6X2/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+
+        <div>
+            <h3 class="toggle-project">Networking (Cloud)</h3>
+            <p>Through this project, I have gained new knowledge about subnets, cloud storage, server connections, and other Azure tools. I have also learned how to create Virtual Machines (VMs) 
+			that run on Azure.</p>
+            <a href="https://docs.google.com/presentation/d/13209mgg3LREkbPgLGE-hgYiHKJk5Gqec/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+
+        <div>
+            <h3 class="toggle-project">Programming (Visual Studio)</h3>
+            <p>Through this project I build two different program one was for Video Manager and the second was for Payroll Systems.</p>
+            <a href="https://docs.google.com/presentation/d/1BUVGNCl4HOKhhgWcozc2zBoJxioAW25x/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+
+        <div>
+            <h3 class="toggle-project">Networking (Linux)</h3>
+            <p>IIn this networking project, connect to Linux using a server. In order to test connections, I have to connect multiple servers using Loopback, IP addresses, 
+			and other techniques.</p>
+            <a href="https://docs.google.com/presentation/d/1kCb8HLT806bwtrbP8JDum5LmcnFBuKsE/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true">View Project</a>
+        </div>
+    </section>
+
+    <div id="copyright">
+        <p style="font-size: 20px; color: #fff;">Copyright Brian Lopez Cabrera</p>
+    </div>
+
+    <div class="date-time"></div>
+
+    <!-- Toggle Handler Script -->
+     <script>
+        $(document).ready(function () {
+            // Toggle project descriptions
+            $('.toggle-project').click(function () {
+                // Toggle the visibility of the corresponding project description and link
+                $(this).nextAll('p, a').slideToggle();
+            });
+
+            // Display date and time with gaming effect
+            function updateDateTime() {
+                var now = new Date();
+                var dateTimeString = now.toLocaleString();
+                $('.date-time').text(dateTimeString);
+                // Add a class with gaming effect
+                $('.date-time').toggleClass('game-effect');
+            }
+
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+        });
+    </script>
+
+    <!-- Your existing script inclusion -->
+    <script src="script.js"></script>
+</body>
+</html>

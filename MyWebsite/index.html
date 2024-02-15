@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Set all link colors to blue */
+        nav a {
+            color: black !important;
+            background-color: lightblue !important;
+        }
+
+        /* Added styles for highlighted links and cursor animation */
+        nav a.highlight-green {
+            background-color: lightgreen;
+            cursor: url('https://i.imgur.com/s4WQaH5.png'), auto;
+        }
+
+        nav a.highlight-blue {
+            background-color: lightblue;
+            cursor: url('http://www.rw-designer.com/cursor-extern.php?id=173197'), auto;
+        }
+
+        /* Updated styles for normal link and random color change on hover */
+        nav a {
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            /* Random color on hover */
+            color: # + Math.floor(Math.random()*16777215).toString(16) !important;
+        }
+
+        #date-time {
+            display: inline-block;
+            margin-top: 20px;
+            /* Additional styles for the date and time */
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* Added animation for cursor change */
+        nav a {
+            transition: cursor 0.3s ease;
+        }
+
+        /* Added styles for paragraph spacing and effects */
+        section p {
+            margin-bottom: 20px;
+            /* Add any additional effects as needed */
+        }
+    </style>
+</head>
+<body class="index-page">
+
+    <div id="index-content" class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="highlight-green">Home</a></li>
+                <li><a href="education.html" class="highlight-blue">Education</a></li>
+                <li><a href="skills.html" class="highlight-blue">Skills</a></li>
+                <li><a href="portfolio.html" class="highlight-blue">Portfolio</a></li>
+                <li><a href="PS.html" class="highlight-blue">Photos</a></li>
+                <li><a href="GamePlay.html" class="highlight-blue">Game Test</a></li>
+                <li><a href="contact.html" class="highlight-blue">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h1>Welcome</h1>
+            <p>I'm happy you were able to attend. Here, you can find out a lot about my interests and work history. I've been interested in computers since Windows 95, and I 
+            make a consistent effort to upgrade and stay current with each new window. I was born and raised in Puerto Rico. I've only worked in the optical sector and have spent 
+            roughly 13 years living in Ohio. Throughout that time, I've learned specifics about how each manufacturer's products work, including Zenni Optical and previously VSPOne, 
+            Hoya Vison, and ExilorLuxxotica.I carry out a range of duties as a Production Optical Technician III at Zenni. I've demonstrated my strong sense of competition in b
+            oth video games and my career. I took part in the largest League of Legends tournament held in Puerto Rico.Play the best E-Sports games worldwide and pit yourself 
+            against all Latin Americans. We were unable to move on, though, as we came in third.I've always loved playing video games, and I've never let my intense competition 
+            stop me from pursuing my dreams. Cooking and baking are some of my other passions. Regarding musical preferences, I adore a wide variety of genres.</p>
+            
+            <p>Me alegra que hayas podido asistir. Aquí podrás descubrir mucho sobre mis intereses e historial laboral. He estado interesado en las computadoras desde Windows 95 y
+            haga un esfuerzo constante para actualizar y mantenerse actualizado con cada nueva ventana. Nací y crecí en Puerto Rico. Sólo he trabajado en el sector óptico y he pasado
+            Aproximadamente 13 años viviendo en Ohio. A lo largo de ese tiempo, aprendí detalles sobre cómo funcionan los productos de cada fabricante, incluidos Zenni Optical y, anteriormente, VSPOne.
+            Hoya Vison y ExilorLuxxotica. Desempeño diversas funciones como Técnico de Producción Óptica III en Zenni. He demostrado mi fuerte sentido de la competencia tanto en los videojuegos como en mi carrera. Participé en el torneo más grande de League of Legends celebrado en Puerto Rico. Juega los mejores juegos de E-Sports a nivel mundial y enfréntate
+            contra todos los latinoamericanos. Sin embargo, no pudimos seguir adelante porque quedamos terceros. Siempre me han encantado los videojuegos y nunca he dejado que mi intensa competencia
+            impedirme perseguir mis sueños. Cocinar y hornear son algunas de mis otras pasiones. En cuanto a preferencias musicales, adoro una amplia variedad de géneros.</p>
+        </section>
+
+        <div id="date-time"></div>
+		
+		   <a href="https://imgur.com/3wnoQvw"><img src="https://i.imgur.com/3wnoQvw.gif" title="source: imgur.com" /></a>
+
+        <!-- Copyright notice -->
+        <p style="text-align: center; margin-top: 20px;">&copy; Brian Lopez Cabrera</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Animate the welcome image on page load with a slower fadeIn
+            $('#welcome-image').fadeIn(3000);
+            
+            // Update date and time with a gaming-style effect and color change
+            setInterval(() => {
+                const dateTimeElement = $('#date-time');
+                const now = new Date();
+                const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+
+                // Random color for the text
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+                // Set text and color without fading
+                dateTimeElement.text(formattedDateTime).css('color', randomColor);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

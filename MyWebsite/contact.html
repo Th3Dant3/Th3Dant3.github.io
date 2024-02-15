@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		
+		/* Added styles for the back button */
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #c8a2c8; /* Lilac color */
+            cursor: pointer;
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .resume-link {
+            margin-top: 20px;
+        }
+
+        .resume-link p {
+            margin: 5px 0;
+        }
+
+        .social-link {
+            margin-top: 20px;
+        }
+
+        .social-link p {
+            margin: 5px 0;
+        }
+
+        .date-time {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Added styles for animations */
+        .pulse {
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="contact-page">
+
+   <div class="container">
+        <!-- Back button added here -->
+        <div class="back-button" onclick="window.location.href='index.html'">← Back</div>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch with me, feel free to fill out the form below or use the provided contact information.</p>
+
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" id="submitBtn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p>Email: <a href="mailto:brianlopezcabrera@gmail.com">brianlopezcabrera@gmail.com</a></p>
+            <p>Phone: (740) 656-3142</p>
+            <p>Address: Blacklick, Ohio 43004</p>
+        </div>
+
+        <div class="resume-link">
+            <p>Check out my resume: <a href="https://docs.google.com/document/d/1p3owMIi79FZ-ppWRE53dnqv8VT9fJM-z/edit?usp=sharing&ouid=113185370933162552597&rtpof=true&sd=true" target="_blank">Resume</a></p>
+        </div>
+
+        <div class="social-link">
+            <p>Visit my LinkedIn: <a href="https://www.linkedin.com/in/brianlopezcabrera/" target="_blank">LinkedIn</a></p>
+        </div>
+    </section>
+	
+	<div id="copyright">
+        <p style="font-size: 20px; color: #fff;">Copyright Brian Lopez Cabrera</p>
+    </div>
+
+    <div id="date-time"></div>
+
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // jQuery code for animations
+            $("#submitBtn").hover(
+                function () {
+                    $(this).addClass("pulse");
+                },
+                function () {
+                    $(this).removeClass("pulse");
+                }
+            );
+
+            $("form").submit(function (e) {
+                e.preventDefault();
+                $(this).addClass("shake");
+                setTimeout(() => {
+                    $(this).removeClass("shake");
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

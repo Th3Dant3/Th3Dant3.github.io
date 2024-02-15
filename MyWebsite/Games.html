@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adventure Game</title>
+</head>
+<body>
+    <h1>Adventure Game</h1>
+    <p th:text="${message}"></p>
+    <form method="post" th:action="@{/play}">
+        <select name="choice">
+            <option th:each="option : ${options}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
