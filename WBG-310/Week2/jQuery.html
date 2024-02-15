@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+        }
+        #myButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click Me!</h1>
+    <p>Click the button to change the background color!</p>
+
+    <!-- Button that triggers the color change -->
+    <button id="myButton">Change Color</button>
+
+    <script>
+        // jQuery document-ready state
+        $(document).ready(function() {
+            // Event handling with jQuery
+            $('#myButton').click(function() {
+                // DOM manipulation with jQuery
+                $('body').css('background-color', getRandomColor());
+            });
+
+            // Function to generate a random color
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        });
+    </script>
+
+</body>
+</html>

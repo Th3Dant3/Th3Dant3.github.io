@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devil May Cry Style Animated Dashboard</title>
+    <link href="../_css/site.css" rel="stylesheet">
+    <style>
+        #dashboard {
+            width: 110px;
+            padding: 20px 20px 0 20px;
+            position: absolute;
+            left: -92px;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.6); /* Initial background color (black) */
+        }
+
+        #dashboard img {
+            margin-bottom: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            opacity: 0.5; /* Initial opacity for images */
+        }
+
+        #dashboard img:hover {
+            opacity: 1.0; /* Hover opacity for images */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+        </header>
+        <div id="dashboard">
+            <img src="../_images/small/blue_h.jpg" width="70" height="70" alt="blue" data-color="rgba(0, 0, 255, 0.6)">
+            <img src="../_images/small/green_h.jpg" width="70" height="70" alt="green" data-color="rgba(0, 128, 0, 0.6)">
+            <img src="../_images/small/orange_h.jpg" width="70" height="70" alt="orange" data-color="rgba(255, 165, 0, 0.6)">
+            <img src="../_images/small/purple_h.jpg" width="70" height="70" alt="purple" data-color="rgba(128, 0, 128, 0.6)">
+            <img src="../_images/small/red_h.jpg" width="70" height="70" alt="red" data-color="rgba(255, 0, 0, 0.6)">
+            <img src="../_images/small/yellow_h.jpg" width="70" height="70" alt="yellow" data-color="rgba(255, 255, 0, 0.6)">
+        </div>
+        <div class="content">
+            <div class="main">
+                <h1>Animated Dashboard</h1>
+                <p>Mouse over the left edge to slide the dashboard</p>
+            </div>
+        </div>
+        <footer>
+            <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        jQuery(document).ready(function($) {
+            // Hover and slide animations
+            $('#dashboard').hover(
+                function() {
+                    $(this).stop().animate(
+                        {
+                            left: '0',
+                        },
+                        500,
+                        'easeInSine'
+                    );
+                },
+                function() {
+                    $(this).stop().animate(
+                        {
+                            left: '-92px',
+                        },
+                        1500,
+                        'easeOutBounce'
+                    );
+                }
+            );
+
+            // Image click handler
+            $('#dashboard img').on('click', function() {
+                var color = $(this).data('color');
+                $('#dashboard').css('background-color', color);
+            });
+        });
+    </script>
+</body>
+</html>

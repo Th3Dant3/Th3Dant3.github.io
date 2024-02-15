@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devil May Cry FAQ</title>
+  <link rel="stylesheet" href="../_css/site.css">
+  <link rel="stylesheet" href="dmc.css"> <!-- Link to your dmc.css file -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style type="text/css">
+  <script src="dmc.js"></script>
+    /* Your inline styles here (if any) */
+    body {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .wrapper {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: #2f2f2f;
+      padding: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff6600;
+    }
+
+    .faq h2 {
+      background: url(imagines/DmC.jpg) no-repeat 0 11px;
+      padding: 10px 0 0 25px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .faq h2.close {
+      background: url(imagines/DmC.jpg) no-repeat 0 11px;
+    }
+
+    .answer {
+      margin-left: 25px;
+      display: none;
+    }
+
+    .footer {
+      background-color: #2f2f2f;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .footer p {
+      color: #ffffff;
+      margin: 0;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      // Add a click event handler for the questions
+      $('.faq h2').click(function() {
+        // Toggle the visibility of the next element with class 'answer'
+        $(this).next('.answer').toggle();
+        // Toggle the 'close' class to change the background image
+        $(this).toggleClass('close');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      DEVIL MAY CRY FAQ
+    </header>
+    <div class="content">
+      <div class="main">
+        <h1>Devil May Cry Game Series FAQ</h1>
+        <div class="faq">
+          <h2>What is Devil May Cry?</h2>
+          <div class="answer">
+            <p>Devil May Cry is an action-adventure hack and slash video game series created by Hideki Kamiya and developed by Capcom. The series focuses on the main character, Dante, a demon hunter with supernatural abilities.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <h2>How many games are there in the Devil May Cry series?</h2>
+          <div class="answer">
+            <p>The Devil May Cry series currently consists of [7] games, including titles like Devil May Cry, Devil May Cry 2, Devil May Cry 3, Devil May Cry 4 and Devil May Cry 5. This List dont add the deluxe Editon or Special Edition</p>
+          </div>
+        </div>
+        <div class="faq">
+          <h2>Can I play Devil May Cry on multiple platforms?</h2>
+          <div class="answer">
+            <p>Yes, Devil May Cry games are available on various gaming platforms, including [PS4,PS5, Xbox]. Make sure to check the system requirements for each game.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Devil May Cry FAQ | Brian Lopez Cabrera</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessa Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Lightbox library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <!-- Initialize Lightbox -->
+    <script>
+        $(document).ready(function(){
+            // Initialize Lightbox
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            });
+        });
+    </script>
+    <style>
+        /* Custom CSS for background */
+        body {
+            background-color: #4F7942; /* Forest color */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .headline {
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="headline">
+        Alessa Gallery
+    </div>
+    <div class="gallery">
+        <div class="thumbnails">
+            <!-- Image 1 -->
+            <a href="images/large/Alessa.jpg" data-lightbox="gallery">
+                <img src="images/thumb/Alessa_thumb.jpg" alt="Alessa">
+            </a>
+            <!-- Image 2 -->
+            <a href="images/large/Alessa2.jpg" data-lightbox="gallery">
+                <img src="images/thumb/Alessa2_thumb.jpg" alt="Image 2">
+            </a>
+            <!-- Image 3 -->
+            <a href="images/large/Alessa3.jpg" data-lightbox="gallery">
+                <img src="images/thumb/Alessa3_thumb.jpg" alt="Image 3">
+            </a>
+            <!-- Image 4 -->
+            <a href="images/large/Alessa4.jpg" data-lightbox="gallery">
+                <img src="images/thumb/Alessa4_thumb.jpg" alt="Image 4">
+            </a>
+            <!-- Image 5 -->
+            <a href="images/large/Alessa5.jpg" data-lightbox="gallery">
+                <img src="images/thumb/Alessa5_thumb.jpg" alt="Image 5">
+            </a>
+            <!-- Image 6 -->
+            <a href="images/large/Alessa6.jpg" data-lightbox="gallery">
+                <img src="images/thumb/Alessa6_thumb.jpg" alt="Image 6">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

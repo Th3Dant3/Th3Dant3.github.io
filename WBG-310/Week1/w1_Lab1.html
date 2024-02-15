@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>JavaScript Exercises</title>
+  <style type="text/css">
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      color: #900;
+      margin-left: 20px;
+    }
+
+    div#results {
+      background-color: #FF6;
+      height: auto;
+      width: 500px;
+      border: 1px solid red;
+      padding: 10px;
+      margin-left: 20px;
+      -moz-box-shadow: 10px 10px 5px #888;
+      -webkit-box-shadow: 10px 10px 5px #888;
+      box-shadow: 10px 10px 5px #888;
+      border-radius: 7px;
+    }
+
+    div#more {
+      background-color: #39F;
+      height: auto;
+      width: 500px;
+      border: 1px solid #036;
+      padding: 10px;
+      margin-left: 20px;
+      margin-top: 20px;
+      -moz-box-shadow: 10px 10px 5px #888;
+      -webkit-box-shadow: 10px 10px 5px #888;
+      box-shadow: 10px 10px 5px #888;
+      color: #CF0;
+    }
+
+    #form1 {
+      padding: 10px;
+      width: 300px; /* Adjusted width for medium length */
+      border-style: solid;
+      border-color: #063;
+      border-radius: 15px;
+      -moz-box-shadow: 10px 10px 5px #888;
+      -webkit-box-shadow: 10px 10px 5px #888;
+      box-shadow: 10px 10px 5px #888;
+      background-color: #CFF;
+      margin: 20px;
+    }
+
+    /* Set the width of the input boxes */
+    #form1 input[type="text"] {
+      width: calc(100% - 20px); /* Adjusted width for medium length */
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script type="text/javascript">
+    function validateForm() {
+      var firstName = document.forms["form1"]["firstname"].value;
+      var age = document.forms["form1"]["age"].value;
+      var skillType = document.forms["form1"]["skilltype"].value;
+
+      // Validate textboxes
+      if (firstName === "" || age === "") {
+        document.getElementById("results").innerHTML = "Please fill out all textboxes.";
+        return false;
+      }
+
+      // Other validation logic can be added here
+
+      // Display skill type
+      displaySkillType(skillType);
+
+      return true;
+    }
+
+    function displaySkillType(skillType) {
+      // Display skill type message based on the selected value
+      var message = "";
+      switch (skillType) {
+        case "designer":
+          message = "You selected Designer.";
+          break;
+        case "developer":
+          message = "You selected Developer.";
+          break;
+        case "programmer":
+          message = "You selected Programmer.";
+          break;
+        case "artist":
+          message = "You selected Artist.";
+          break;
+        default:
+          message = "Invalid skill type.";
+      }
+
+      document.getElementById("more").innerHTML = message;
+    }
+  </script>
+</head>
+
+<body>
+
+   <form name="form1" id="form1" action="" method="post" onsubmit="return validateForm()">
+    <label for="firstname">First Name:</label>
+    <input type="text" name="firstname" id="firstname">
+    <br>
+
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age">
+    <br>
+
+    <label>Skill Type:</label>
+    <br>
+    <input type="radio" name="skilltype" value="designer"> Designer
+    <br>
+    <input type="radio" name="skilltype" value="developer"> Developer
+    <br>
+    <input type="radio" name="skilltype" value="programmer"> Programmer
+    <br>
+    <input type="radio" name="skilltype" value="artist"> Artist
+    <br>
+
+    <input type="button" value="Submit" onclick="validateForm()">
+    <input type="reset" value="Clear Form">
+  </form>
+  <div id="results"></div>
+  <div id="more">Testing the results</div>
+</body>
+
+</html>

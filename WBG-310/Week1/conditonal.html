@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Age Checker</h1>
+
+    <form>
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" name="age" required>
+        <button type="button" onclick="checkAge()">Check Age</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAge() {
+            // Get the user's age from the input field
+            var age = parseInt(document.getElementById("age").value);
+
+            // Check the age using conditional statements
+            if (isNaN(age)) {
+                // Display an error message if the input is not a number
+                document.getElementById("result").innerHTML = "Please enter a valid age.";
+            } else if (age < 18) {
+                // Display a message for users under 18
+                document.getElementById("result").innerHTML = "You are a minor.";
+            } else if (age >= 18 && age <= 65) {
+                // Display a message for users between 18 and 65
+                document.getElementById("result").innerHTML = "You are an adult.";
+            } else {
+                // Display a message for users over 65
+                document.getElementById("result").innerHTML = "You are a senior citizen.";
+            }
+        }
+    </script>
+
+</body>
+</html>

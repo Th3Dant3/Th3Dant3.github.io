@@ -1,0 +1,21 @@
+/* Gallery Styles */
+.gallery {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnails a {
+    margin: 10px;
+}
+
+.thumbnails img {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Loading Mario</title>
+  <style>
+    /* Container styling */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: black;
+      margin: 0;
+    }
+
+    /* Block styling */
+    .mario-block {
+      height: 150px;
+      width: 150px;
+      cursor: pointer;
+      margin: 10px; /* Add some spacing */
+    }
+  </style>
+</head>
+<body>
+  <div class="mario-block" onclick="toggleImage(this)"></div>
+  <div class="mario-block" onclick="toggleImage(this)"></div>
+  <div class="mario-block" onclick="toggleImage(this)"></div>
+
+  <script>
+    var marioImages = [
+      "https://i.imgur.com/xt5amfy.png",
+      "https://i.imgur.com/zQ8MuZI.jpg",
+      "https://i.imgur.com/Q8RYyIF.jpg"
+    ];
+
+    // Dictionary to store click count for each block
+    var clickCounts = {};
+
+    function isInViewport(element) {
+      var rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function lazyLoadMario() {
+      var marioBlocks = document.querySelectorAll('.mario-block');
+      marioBlocks.forEach(function (block) {
+        if (isInViewport(block)) {
+          // Mario block is in viewport
+          block.style.background = 'url("https://i.imgur.com/K3mOaIH.png") center/cover no-repeat';
+          block.style.backgroundSize = 'cover';
+          block.style.height = '150px'; // Adjust height
+          block.style.width = '150px';  // Adjust width
+        } else {
+          // Mario block is not in viewport, show a random image
+          var randomImage = marioImages[Math.floor(Math.random() * marioImages.length)];
+          block.style.background = 'url("' + randomImage + '") center/cover no-repeat';
+          block.style.backgroundSize = 'cover';
+          block.style.height = '200px'; // Adjust height
+          block.style.width = '200px';  // Adjust width
+        }
+      });
+    }
+
+    function toggleImage(block) {
+      // Check if click count is defined for the block
+      if (!clickCounts[block]) {
+        clickCounts[block] = 1;
+      } else {
+        // Increment click count
+        clickCounts[block]++;
+      }
+
+      // Toggle a random image on click
+      var randomImage;
+      if (clickCounts[block] % 2 === 1) {
+        // Odd click count, show a random image
+        randomImage = marioImages[Math.floor(Math.random() * marioImages.length)];
+      } else {
+        // Even click count, go back to Mario block
+        randomImage = "https://i.imgur.com/K3mOaIH.png";
+      }
+
+      block.style.background = 'url("' + randomImage + '") center/cover no-repeat';
+      block.style.backgroundSize = 'cover';
+      block.style.height = '200px'; // Adjust height
+      block.style.width = '200px';  // Adjust width
+    }
+
+    window.addEventListener('scroll', lazyLoadMario);
+    lazyLoadMario();
+  </script>
+</body>
+</html>

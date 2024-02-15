@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Devil May Cry Theme</title>
+    <style>
+        /* Include styles from the Devil May Cry theme template as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name - Devil May Cry Theme</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <!-- Add more navigation links as needed -->
+    </nav>
+
+    <section>
+        <h2>Contact Us</h2>
+
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Platform:</label>
+            <input type="radio" id="pc" name="platform" value="PC" required>
+            <label for="pc">PC</label>
+            <input type="radio" id="ps" name="platform" value="PlayStation" required>
+            <label for="ps">PlayStation</label>
+            <input type="radio" id="xbox" name="platform" value="Xbox" required>
+            <label for="xbox">Xbox</label>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <div id="statusMessage"></div>
+    </section>
+
+    <footer>
+        &copy; 2024 Your Name. All rights reserved.
+    </footer>
+
+    <script>
+        function submitForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var platform = document.querySelector('input[name="platform"]:checked');
+
+            // Validate if all fields are filled
+            if (name && email && platform) {
+                var platformValue = platform.value;
+
+                // Display success message
+                document.getElementById('statusMessage').innerHTML = `
+                    <p>Form submitted successfully!</p>
+                    <p>Name: ${name}</p>
+                    <p>Email: ${email}</p>
+                    <p>Platform: ${platformValue}</p>
+                `;
+            } else {
+                // Display error message
+                document.getElementById('statusMessage').innerHTML = '<p>Please fill in all fields.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
