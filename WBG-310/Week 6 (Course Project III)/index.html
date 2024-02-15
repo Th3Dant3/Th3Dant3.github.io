@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Lopez Cabrera - Diablo IV</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="custom-style.css">
+    <script src="custom-script.js"></script>
+    <style>
+        /* Additional styles specific to index.html */
+        /* Add your existing CSS styles here */
+    </style>
+</head>
+<body style="background-color: #141414; color: #ffffff;">
+    <header>
+    <div class="container">
+        <h1 class="gallery-link-large">Brian Lopez Cabrera - Diablo IV</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>                     
+                <li><a href="contact.html">Contact</a></li>                   
+                <li><a href="#">Character Selection</a>
+                    <ul class="submenu">
+                        <li><a href="druid.html">Druid</a></li>
+                        <li><a href="sorceress.html">Sorceress</a></li>
+                        <li><a href="necromancer.html">Necromancer</a></li>
+                        <li><a href="rogue.html">Rogue</a></li>
+                        <li><a href="barbarian.html">Barbarian</a></li>
+                    </ul>
+					<li><a href="gallery.html">Gallery</a></li> 
+                </li>
+                <li><a href="#">Merchandise</a>
+                    <ul class="submenu">
+                        <li><a href="#">VideoGame</a></li>
+                        <li><a href="#">Collector Items</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <section class="main-content">
+        <!-- Diablo IV Story -->
+        <div class="character-container">
+            <h3 class="character-name" data-target="diablo">Diablo IV</h3>
+            <div class="character-story" id="diablo-story">
+                <p>Diablo 4 is set 50 years after Diablo 3 and the world of Sanctuary has been free from invasions by the Prime and Lesser Evils during that time. However, a religious order has started worshipping the fallen angel Inarius as a god and a smaller cult has started worshipping the banished demon princess Lilith.</p>
+            </div>
+        </div>
+        <!-- End Diablo IV Story -->
+    </section>
+
+    <footer style="text-align: center; padding: 10px; background-color: #000000; position: fixed; bottom: 0; width: 100%; color: #ffffff;">
+        &copy; 2024 Brian Lopez Cabrera. All rights reserved.
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Toggle submenu display
+            $('.menu li').hover(function () {
+                $(this).find('.submenu').stop().slideDown(200);
+            }, function () {
+                $(this).find('.submenu').stop().slideUp(200);
+            });
+        });
+    </script>
+</body>
+</html>
