@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablo IV Gallery - Brian Lopez Cabrera</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="custom-style.css">
+    <script src="custom-script.js"></script>
+    <style>
+        /* Additional styles specific to gallery.html */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-image {
+            max-width: 500px;
+            height: 280px;
+            display: block;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-overlay p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body style="background-color: #141414; color: #ffffff;">
+    <header>
+        <h1 style="font-size: 2em; color: #c41e3a; text-align: center; padding: 20px; background-color: #000000;">Diablo IV Gallery</h1>
+        <nav style="text-align: center;">
+            <a href="index.html" class="gallery-link">Home</a>
+            <a href="contact.html" class="gallery-link">Contact</a>
+            <a href="gallery.html" class="gallery-link">Gallery</a>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <h2 style="color: #c41e3a;">Explore the Diablo IV Gallery</h2>
+        
+        <!-- Image 1 -->
+        <div class="image-container" id="image1">
+            <img src="images/CharacterSelection.jpg" alt="Diablo IV Image 1" class="gallery-image">
+            <div class="image-overlay" id="overlay1">
+                <p>Character Selection</p>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="image-container" id="image2">
+            <img src="images/Menu.jpeg" alt="Diablo IV Image 2" class="gallery-image">
+            <div class="image-overlay" id="overlay2">
+                <p>Menu</p>
+            </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="image-container" id="image3">
+            <img src="images/DruidOpenNight.jpg" alt="Diablo IV Image 3" class="gallery-image">
+            <div class="image-overlay" id="overlay3">
+                <p>Druid Level 76</p>
+            </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="image-container" id="image4">
+            <img src="images/NecroS1.jpg" alt="Diablo IV Image 4" class="gallery-image">
+            <div class="image-overlay" id="overlay4">
+                <p>Season 1 Necromancer</p>
+            </div>
+        </div>
+
+        <!-- Image 5 -->
+        <div class="image-container" id="image5">
+            <img src="images/SorcsS2.jpg" alt="Diablo IV Image 5" class="gallery-image">
+            <div class="image-overlay" id="overlay5">
+                <p>Season 2 Sorceres</p>
+            </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="image-container" id="image6">
+            <img src="images/DruidS3.jpg" alt="Diablo IV Image 6" class="gallery-image">
+            <div class="image-overlay" id="overlay6">
+                <p>Season 3 Druid</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 10px; background-color: #000000; position: fixed; bottom: 0; width: 100%; color: #ffffff;">
+        &copy; 2024 Brian Lopez Cabrera. All rights reserved.
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Hover effect for image descriptions
+            $('.image-container').hover(
+                function () {
+                    var overlayId = '#' + $(this).attr('id') + ' .image-overlay';
+                    $(overlayId).stop().animate({ opacity: 1 }, 300);
+                },
+                function () {
+                    var overlayId = '#' + $(this).attr('id') + ' .image-overlay';
+                    $(overlayId).stop().animate({ opacity: 0 }, 300);
+                }
+            );
+
+            // Click event for image descriptions
+            $('.image-container').click(function () {
+                var overlayId = '#' + $(this).attr('id') + ' .image-overlay';
+                $(overlayId).slideUp(500).slideDown(500);
+            });
+        });
+    </script>
+</body>
+</html>

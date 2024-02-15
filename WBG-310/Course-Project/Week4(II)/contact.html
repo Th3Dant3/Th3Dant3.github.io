@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Brian Lopez Cabrera</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="custom-style.css">
+    <script src="custom-script.js"></script>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/42AidAZ.jpg'); /* Diablo IV background image */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000; /* Dark header background */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #c41e3a; /* Diablo IV logo color */
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #000000; /* Dark form background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #ffffff; /* Form text color */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #c41e3a; /* Label text color */
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #c41e3a; /* Submit button color inspired by Diablo IV */
+            color: #ffffff; /* Submit button text color */
+            cursor: pointer;
+        }
+
+        #statusMessage {
+            margin-top: 10px;
+            color: #ffffff; /* Status message text color */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000000; /* Dark footer background */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brian Lopez Cabrera- Contact </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Platform:</label>
+            <input type="radio" id="pc" name="platform" value="PC" required>
+            <label for="pc">PC</label>
+            <input type="radio" id="ps" name="platform" value="PlayStation" required>
+            <label for="ps">PlayStation</label>
+            <input type="radio" id="xbox" name="platform" value="Xbox" required>
+            <label for="xbox">Xbox</label>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <div id="statusMessage"></div>
+    </section>
+
+    <footer>
+        &copy; 2024 Brian Lopez Cabrera. All rights reserved.
+    </footer>
+
+    <script>
+        console.log("Script loaded"); // Debugging statement
+
+        function submitForm() {
+            console.log("Function called"); // Debugging statement
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var platform = document.querySelector('input[name="platform"]:checked');
+
+            // Validate if all fields are filled
+            if (name && email && platform) {
+                var platformValue = platform.value;
+
+                // Display success message
+                document.getElementById('statusMessage').innerHTML = `
+                    <p>Form submitted successfully!</p>
+                    <p>Name: ${name}</p>
+                    <p>Email: ${email}</p>
+                    <p>Platform: ${platformValue}</p>
+                `;
+            } else {
+                // Display error message
+                document.getElementById('statusMessage').innerHTML = '<p>Please fill in all fields.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
