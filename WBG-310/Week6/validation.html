@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation Tutorial</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="jquery_validate/jquery.validate.min.js"></script>
+<style>
+  #signup label.error {
+    font-size: 0.8em;
+    color: #F00;
+    font-weight: bold;
+    display: block;
+    margin-left: 215px;
+  }
+
+  #signup input.error, #signup select.error {
+    background: #FFA9B8;
+    border: 1px solid red;
+  }
+</style>
+</head>
+<body>
+
+<form action="process.html" method="post" name="signup" id="signup">
+  <label for="name">Name:</label>
+  <input name="name" type="text" id="name" class="required" title="Please type your name."><br>
+
+  <label for="dob">Date of Birth:</label>
+  <input name="dob" type="text" id="dob" class="date" title="Please type your date of birth using this format: 01/19/2000"><br>
+
+  <label for="planet">Choose a Planet:</label>
+  <select name="planet" id="planet" class="required" title="Please choose a planet.">
+    <option value="">Select</option>
+    <option value="earth">Earth</option>
+    <option value="mars">Mars</option>
+    <option value="venus">Venus</option>
+  </select><br>
+
+  <label for="email">Email:</label>
+  <input name="email" type="email" id="email" class="required email" title="Please supply your e-mail address."><br>
+
+  <label for="password">Password:</label>
+  <input name="password" type="password" id="password" class="required" title="Please type a password"><br>
+
+  <label for="confirm_password">Confirm Password:</label>
+  <input name="confirm_password" type="password" id="confirm_password" class="required equalTo" equalTo="#password" title="The two passwords do not match."><br>
+
+  <input type="checkbox" name="hobby[]" id="hobby1" value="hiking" class="required" title="Please check at least 1 hobby.">
+  <label for="hobby1">Hiking</label><br>
+  <input type="checkbox" name="hobby[]" id="hobby2" value="swimming" class="required">
+  <label for="hobby2">Swimming</label><br>
+  <input type="checkbox" name="hobby[]" id="hobby3" value="cycling" class="required">
+  <label for="hobby3">Cycling</label><br>
+
+  <input type="radio" name="spam" id="yes" value="yes" class="required" title="Please select an option">
+  <label for="yes">Yes</label>
+  <input type="radio" name="spam" id="no" value="no">
+  <label for="no">No</label><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  $(document).ready(function() {
+    $('#signup').validate({
+      rules: {
+        name: {
+          required: true
+        },
+        dob: {
+          date: true
+        },
+        planet: {
+          required: true
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          minlength: 8,
+          maxlength: 16
+        },
+        confirm_password: {
+          required: true,
+          equalTo: "#password"
+        },
+        "hobby[]": {
+          required: true
+        },
+        spam: {
+          required: true
+        }
+      },
+      messages: {
+        name: {
+          required: "Please type your name."
+        },
+        dob: {
+          date: "Please type your date of birth using this format: 01/19/2000"
+        },
+        planet: {
+          required: "Please choose a planet."
+        },
+        email: {
+          required: "Please supply your e-mail address.",
+          email: "This is not a valid email address."
+        },
+        password: {
+          required: "Please type a password",
+          minlength: "Password must be at least 8 characters long.",
+          maxlength: "Password must be at most 16 characters long."
+        },
+        confirm_password: {
+          required: "Please confirm your password",
+          equalTo: "The two passwords do not match."
+        },
+        "hobby[]": {
+          required: "Please check at least 1 hobby."
+        },
+        spam: {
+          required: "Please select an option"
+        }
+      },
+      errorPlacement: function(error, element) {
+        if ( element.is(":radio") || element.is(":checkbox")) {
+          error.appendTo( element.parent());
+        } else {
+          error.insertAfter(element);
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
