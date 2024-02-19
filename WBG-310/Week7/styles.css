@@ -1,0 +1,101 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Press Start 2P', cursive; /* Gaming font */
+}
+
+/* Style main content */
+main {
+    padding: 20px;
+}
+
+/* Style tab container */
+.tab-container {
+    border: 1px solid #ccc;
+}
+
+/* Style tab list */
+.tab-list {
+    list-style-type: none;
+    margin: 0 auto; /* Center the tab list */
+    padding: 0;
+}
+
+.tab-list li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.tab-list li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #8B0000; /* Dark red background color */
+    color: #fff; /* White text color */
+    border: 1px solid #ccc;
+    border-bottom: none;
+    font-size: 16px; /* Increase font size */
+    font-family: 'Press Start 2P', cursive; /* Gaming font */
+}
+
+.tab-list li a:hover {
+    background-color: #FF4500; /* Orange hover color */
+}
+
+.tab-list li a.active {
+    background-color: #8B0000; /* Dark red background color for active tab */
+    color: #fff; /* White text color for active tab */
+}
+
+/* Style tab content */
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center align text */
+    font-size: 18px; /* Increase font size */
+    font-family: 'Press Start 2P', cursive; /* Gaming font */
+}
+
+/* Center align game titles */
+.tab-content h2 {
+    margin-bottom: 10px; /* Add some space below the title */
+}
+
+/* Show active tab */
+.tab-content.active {
+    display: block;
+}
+
+/* Game content and image layout */
+.tab-content .content-left, .tab-content .content-right {
+    float: left;
+    width: 50%;
+}
+
+.tab-content .image-left, .tab-content .image-right {
+    float: right;
+    width: 50%;
+}
+
+.tab-content .image-left img, .tab-content .image-right img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Clear floats */
+.tab-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
