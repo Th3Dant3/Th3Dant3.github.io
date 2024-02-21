@@ -31,15 +31,16 @@
     transition: opacity 0.3s ease;
 }
 
-    body {
-            background-image: url('https://i.imgur.com/42AidAZ.jpg'); /* Diablo IV background image */
-            background-size: cover;
-            background-position: center;
-            font-family: 'Verdana', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #ffffff;
-        }
+   body {
+    background-image: url('images/DiabloIV_WP.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
 
 
 /* Updated styles for the gallery header */
