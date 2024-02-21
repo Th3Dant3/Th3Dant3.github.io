@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablo History</title>
+   <link rel="stylesheet" href="custom-style.css">63
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+    <script>
+        $(document).ready(function(){
+            $('.diablo-game').hover(function(){
+                $(this).animate({
+                    width: '+=20px', // Increase width on hover
+                    height: '+=20px', // Increase height on hover
+                    fontSize: '+=2px', // Increase font size on hover
+                    padding: '+=10px' // Increase padding on hover
+                }, 'fast');
+            }, function(){
+                $(this).animate({
+                    width: '-=20px', // Decrease width on hover out
+                    height: '-=20px', // Decrease height on hover out
+                    fontSize: '-=2px', // Decrease font size on hover out
+                    padding: '-=10px' // Decrease padding on hover out
+                }, 'fast');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Diablo History</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <section class="about-section">
+        <h2>About Diablo</h2>
+        <p>Diablo is a series of action role-playing hack and slash video games developed by Blizzard Entertainment. The series is set in the fictional world of Sanctuary and focuses on the battle between the forces of Heaven and Hell.</p>
+        <h3>Diablo Games</h3>
+        <ul>
+            <li><a href="#diablo1">Diablo</a></li>
+            <li><a href="#diablo2">Diablo II</a></li>
+            <li><a href="#diablo3">Diablo III</a></li>
+            <li><a href="#diablo4">Diablo IV</a></li>
+        </ul>
+
+        <div id="diablo1" class="diablo-game">
+            <h3>Diablo</h3>
+            <img src="images/DiabloI.jpg" alt="Diablo I" class="game-image">
+            <p>Diablo was released in 1996 and is the first game in the series. It follows the story of a lone hero battling the Lord of Terror, Diablo, as he descends into the town of Tristram.</p>
+            <p>Timeline: 1996</p>
+        </div>
+        <div id="diablo2" class="diablo-game">
+            <h3>Diablo II</h3>
+            <img src="images/DiabloII.jpg" alt="Diablo II" class="game-image">
+            <p>Diablo II was released in 2000 and continues the story of the original game. Players must journey across the deserts of Aranoch and the jungles of Kurast to defeat Diablo's brothers, Mephisto and Baal.</p>
+            <p>Timeline: 2000</p>
+        </div>
+        <div id="diablo3" class="diablo-game">
+            <h3>Diablo III</h3>
+            <img src="images/DiabloIII.jpg" alt="Diablo III" class="game-image">
+            <p>Diablo III was released in 2012 and features a new generation of heroes fighting against the Prime Evil, Diablo, who has returned to wreak havoc on Sanctuary.</p>
+            <p>Timeline: 2012</p>
+        </div>
+        <div id="diablo4" class="diablo-game">
+            <h3>Diablo IV</h3>
+            <img src="images/DiabloIV.jpg" alt="Diablo IV" class="game-image">
+            <p>Diablo IV is the upcoming installment in the series, announced in 2019. It returns to the series' dark and gothic roots, with players battling against the forces of Hell in an open-world environment.</p>
+            <p>Timeline: TBA</p>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 Diablo IV. All rights reserved.
+		&copy; 2024 Brian Lopez Cabrera. All rights reserved.
+    </footer>
+</body>
+</html>

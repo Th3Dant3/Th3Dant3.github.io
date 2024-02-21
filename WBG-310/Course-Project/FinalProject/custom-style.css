@@ -1,93 +1,26 @@
-/* Custom styles 
+/* Custom styles */
 
-.thumbnails {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.thumbnails a {
-    margin: 10px;
-    position: relative;
-}
-
-.thumbnails img {
-    max-width: 150px; /* Adjust as needed */
-    height: auto;
-    display: block;
-}
-
-/* Style for the image overlay */
-.image-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-   body {
-    body {
-    background-image: url('images/DiabloIV_WP.jpg');
-    background-size: cover;
-    background-position: center;
-    font-family: 'Verdana', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-}
-
-
-
-/* Updated styles for the gallery header */
-.gallery-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Adjust as needed */
-}
-
-.gallery-header h1 {
-    font-size: 2em;
-    color: #c41e3a;
-    margin: 0; /* Remove default margin */
-}
-
-
-/* Show the image overlay on hover */
-.thumbnails a:hover .image-overlay {
-    opacity: 1;
-}
-
-
-/* Body and header styles */
+/* General styles */
 body {
     font-family: 'Verdana', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #141414; /* Dark background inspired by Diablo IV */
-    color: #ffffff; /* Light text color */
-}
-
-nav .submenu {
-    display: none; /* Hide the submenu initially */
+    background-image: url('images/DiabloIV_WP.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #000000; /* Dark header background */
+    background-color: #000000;
 }
 
 h1 {
     margin: 0;
     font-size: 2em;
-    color: #c41e3a; /* Diablo IV logo color */
+    color: #c41e3a;
 }
 
 nav {
@@ -115,22 +48,69 @@ section {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #000000; /* Dark footer background */
+    background-color: #000000;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-img {
-    max-width: 100%; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto; 
+/* Additional styles for the gallery header */
+.gallery-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-/* Additional styles for the contact form */
-#contactForm {
-    transition: transform 0.5s ease-in-out;
+.gallery-header h1 {
+    font-size: 2em;
+    color: #c41e3a;
+    margin: 0;
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Character container styles */
+.character-container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: transparent; /* Updated to transparent */
+    border-radius: 10px;
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+
+/* Character name styles */
+.character-name {
+    font-size: 36px;
+    color: #c41e3a;
+    margin-bottom: 20px;
+    background-color: transparent; /* Set background color to transparent */
+    padding: 10px; /* Optional padding */
+    border-radius: 5px; /* Optional border radius */
+}
+
+
+/* Character story styles */
+.character-story {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: justify;
+    background-color: transparent; /* Updated to transparent */
+}
+
+/* Show the image overlay on hover */
+.thumbnails a:hover .image-overlay {
+    opacity: 1;
 }
 
 /* Additional styles specific to gallery.html */
@@ -142,24 +122,15 @@ img {
     cursor: pointer;
 }
 
-.gallery-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 .image-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -168,42 +139,37 @@ img {
     margin: 0;
     font-size: 1.2em;
 }
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 80vh; /* Adjust the height as needed */
-    margin-top: 100px; /* Adjust the top margin to position the gallery under the header */
-    padding-top: 50px; /* Padding for top content */
-}
-
-
-
-/* Add any additional styles for your theme */
-
-/* Additional styles specific to index.html */
-#hiddenContent {
-    background-color: #000000;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    color: #ffffff;
-}
-
-/* Larger font size for links in the header */
-.gallery-link-large {
-    font-size: 1.2em; /* Adjust the font size as needed */
-}
 
 /* Center the main content vertically */
 .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensures the section takes up the full viewport height */
+    height: 100vh;
 }
 
 /* Center the image within its container */
 .image-container {
-    text-align: center; /* Centers the image */
+    text-align: center;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #000000;
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure full width */
+    left: 0;
+}
+
+.submenu li {
+    display: inline-block; /* Display items horizontally */
+    margin: 0 10px; /* Add margin between items */
+}
+
+.submenu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    display: block; /* Make the links block-level for padding */
 }

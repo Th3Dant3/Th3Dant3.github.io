@@ -15,17 +15,29 @@
     <header>
         <h1 style="font-size: 2em; color: #c41e3a; text-align: center; padding: 20px; background-color: #000000;">Diablo IV Gallery</h1>
         <nav style="text-align: center;">
-            <a href="index.html" class="gallery-link gallery-link-large">Home</a>
-            <a href="contact.html" class="gallery-link gallery-link-large">Contact</a>
-            <a href="gallery.html" class="gallery-link">Gallery</a>
+            <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#">Character Selection</a>
+        <ul class="submenu">
+            <li><a href="druid.html">Druid</a></li>
+            <li><a href="sorceress.html">Sorceress</a></li>
+            <li><a href="necromancer.html">Necromancer</a></li>
+            <li><a href="rogue.html">Rogue</a></li>
+            <li><a href="barbarian.html">Barbarian</a></li>
+        </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
         </nav>
     </header>
-	 <div class="gallery-header">
+    <div class="gallery-header">
         <h2>Diablo IV Gallery</h2>
     </div>
 
     <section class="main-content">
-	 
         <div class="gallery-container">
             <!-- Image 1 -->
             <div class="image-container" id="image1">
@@ -92,5 +104,15 @@
     <footer style="text-align: center; padding: 10px; background-color: #000000; position: fixed; bottom: 0; width: 100%; color: #ffffff;">
         &copy; 2024 Brian Lopez Cabrera. All rights reserved.
     </footer>
+    <script>
+        $(document).ready(function () {
+            // Toggle submenu display
+            $('nav ul li:nth-child(3)').hover(function () {
+                $(this).find('.submenu').stop().slideDown(200);
+            }, function () {
+                $(this).find('.submenu').stop().slideUp(200);
+            });
+        });
+    </script>
 </body>
 </html>

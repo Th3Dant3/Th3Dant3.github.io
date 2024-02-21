@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Necromancer - Diablo IV</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="custom-script.js"></script>
     <link rel="stylesheet" href="custom-style.css">
 </head>
 <body>
     <header>
         <h1>Necromancer Page</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="gallery.html">Gallery</a>
+           <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#">Character Selection</a>
+        <ul class="submenu">
+            <li><a href="druid.html">Druid</a></li>
+            <li><a href="sorceress.html">Sorceress</a></li>
+            <li><a href="necromancer.html">Necromancer</a></li>
+            <li><a href="rogue.html">Rogue</a></li>
+            <li><a href="barbarian.html">Barbarian</a></li>
+        </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
         </nav>
     </header>
     <section>
@@ -26,7 +41,17 @@
     </section>
     <footer>
         &copy; 2024 Diablo IV. All rights reserved.
+		&copy; 2024 Brian Lopez Cabrera. All rights reserved.
     </footer>
-    <script src="custom-script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Toggle submenu display
+            $('nav ul li:nth-child(4)').hover(function () {
+                $(this).find('.submenu').stop().slideDown(200);
+            }, function () {
+                $(this).find('.submenu').stop().slideUp(200);
+            });
+        });
+    </script>
 </body>
 </html>

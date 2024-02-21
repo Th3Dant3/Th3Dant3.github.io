@@ -60,4 +60,14 @@ $(document).ready(function () {
             $(this).find('.gallery-overlay').stop().fadeOut(300, 'easeInOutSine');
         }
     );
+
+    // Submenu functionality
+    $('.menu > li').hover(
+        function () {
+            $(this).find('.submenu').stop().slideDown(200);
+        },
+        function () {
+            $(this).find('.submenu').stop().slideUp(200);
+        }
+    );
 });
